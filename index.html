@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>SUPREME ARSENE BAN</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-spinner"></div>
+</div>
+
+<div id="menuOverlay" class="menu-overlay"></div>
+
+<div id="sideMenu" class="side-menu">
+    <div class="menu-header">
+        <h3>SUPREME ARSENE</h3>
+    </div>
+    <div class="menu-buttons">
+        <button class="menu-btn whatsapp" id="menuWhatsappBtn">CHAINE WHATSAPP</button>
+        <button class="menu-btn telegram" id="menuTelegramBtn">CHAINE TELEGRAM</button>
+        <button class="menu-btn owner" id="menuOwnerBtn">CREATOR</button>
+    </div>
+    <div class="menu-footer">
+        <div class="uid-section">
+            <div class="uid-label">🌐YOUR UID</div>
+            <div class="uid-value" id="userUid">Chargement...</div>
+            <button class="copy-uid-btn" id="copyUidBtn">📋 COPIER L'UID</button>
+        </div>
+        <div class="close-menu-btn" id="closeMenuBtn">✖ FERMER</div>
+    </div>
+</div>
+
+<div class="menu-float" id="menuIcon">☰</div>
+
+<div class="video-wrapper">
+    <video autoplay loop muted playsinline>
+        <source src="https://files.catbox.moe/w3ygir.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+</div>
+
+<h1 class="glitch" data-text="SUPREME ARSENE BAN">SUPREME ARSENE BAN</h1>
+<p class="subtitle">SUBMIT REPORT<br>INCIDENT DETAILS</p>
+
+<div class="report-box">
+    <div class="phone-input" id="phoneWrapper">
+        <span>☎️</span>
+        <input type="tel" id="phone" placeholder="Enter phone number">
+    </div>
+    
+    <!-- ANCIENS BOUTONS -->
+    <div class="motifs">
+        <button data-type="SCAM" class="motif-btn">SCAM 🚨</button>
+        <button data-type="ABUSE" class="motif-btn">ABUSE ⚠️</button>
+        <button data-type="SPAM" class="motif-btn">SPAM ❌️</button>
+    </div>
+
+    <!-- NOUVEAUX 3 BOUTONS ROUGE/NOIR -->
+    <div class="new-buttons">
+        <button data-type="SUPREME" class="new-btn supreme">SUPREME</button>
+        <button data-type="FUCKED" class="new-btn fucked">FUCKED</button>
+        <button data-type="KILLED" class="new-btn killed">KILLED</button>
+    </div>
+
+    <button id="sendBtn" class="envoyer-btn">ENVOYER 🔰</button>
+</div>
+
+<div class="disclaimer">
+    ⚠️ Disclaimer: This tool is for educational purposes only.<br>
+    We do not guarantee the banning of any account and are not responsible<br>
+    for any consequences that may arise from using this service.<br>
+    Use at your own risk.
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
