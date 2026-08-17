@@ -1,80 +1,752 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>SUPREME ARSENE BAN</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>SUPREME ARSENE // CONTROL</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        :root {
+            --red: #ff1010;
+            --red-dark: #8b0000;
+            --black: #030303;
+            --panel: rgba(13, 13, 13, .94);
+            --border: rgba(255, 0, 0, .25);
+            --text: #f5f5f5;
+            --muted: #777;
+        }
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at 50% 10%,
+                    rgba(255, 0, 0, .18),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 0% 100%,
+                    rgba(120, 0, 0, .12),
+                    transparent 30%
+                ),
+                #030303;
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        /* =========================
+           BACKGROUND
+        ========================= */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: .35;
+            background:
+                linear-gradient(
+                    rgba(255, 255, 255, .018) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 0, 0, .018) 1px,
+                    transparent 1px
+                );
+            background-size: 35px 35px;
+            z-index: -1;
+        }
+        .video-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+            overflow: hidden;
+        }
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .13;
+            filter: grayscale(1) contrast(1.7);
+        }
+        .video-wrapper .overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, .95),
+                    rgba(30, 0, 0, .35),
+                    rgba(0, 0, 0, .98)
+                );
+        }
+        /* =========================
+           TOP BAR
+        ========================= */
+        .top-bar {
+            width: 92%;
+            max-width: 500px;
+            margin: 18px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .system-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #ff1616;
+            box-shadow: 0 0 12px #ff0000;
+            animation: pulse 1.6s infinite;
+        }
+        @keyframes pulse {
+            50% {
+                opacity: .3;
+                box-shadow: 0 0 3px #ff0000;
+            }
+        }
+        /* =========================
+           MENU BUTTON
+        ========================= */
+        .menu-float {
+            position: fixed;
+            top: 18px;
+            left: 18px;
+            width: 46px;
+            height: 46px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: rgba(5, 5, 5, .88);
+            color: #ff2222;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow:
+                0 0 22px rgba(255, 0, 0, .15);
+        }
+        .menu-float:active {
+            transform: scale(.94);
+        }
+        /* =========================
+           HEADER
+        ========================= */
+        .brand {
+            text-align: center;
+            margin-top: 75px;
+        }
+        .brand-small {
+            color: #777;
+            font-size: 9px;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+        }
+        .glitch {
+            font-size: clamp(30px, 9vw, 56px);
+            font-weight: 950;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow:
+                0 0 5px #fff,
+                0 0 14px #ff0000,
+                0 0 35px rgba(255, 0, 0, .8);
+        }
+        .subtitle {
+            margin-top: 12px;
+            color: #888;
+            font-size: 10px;
+            line-height: 1.8;
+            letter-spacing: 4px;
+        }
+        /* =========================
+           MAIN CARD
+        ========================= */
+        .report-box {
+            width: min(92%, 470px);
+            margin: 30px auto 0;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(20, 20, 20, .95),
+                    rgba(13, 0, 0, .94)
+                );
+            box-shadow:
+                0 20px 70px rgba(0, 0, 0, .65),
+                0 0 35px rgba(255, 0, 0, .08),
+                inset 0 0 25px rgba(255, 0, 0, .025);
+            backdrop-filter: blur(14px);
+        }
+        /* =========================
+           CARD HEADER
+        ========================= */
+        .card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .card-title {
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .card-id {
+            color: #ff2525;
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
+        /* =========================
+           PHONE INPUT
+        ========================= */
+        .input-label {
+            color: #666;
+            font-size: 9px;
+            letter-spacing: 2px;
+            margin-bottom: 7px;
+        }
+        .phone-input {
+            height: 57px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 15px;
+            background: #070707;
+            border: 1px solid #320707;
+            border-radius: 13px;
+            transition: .25s;
+        }
+        .phone-input:focus-within {
+            border-color: #e00000;
+            box-shadow:
+                0 0 20px rgba(255, 0, 0, .16);
+        }
+        .phone-input span {
+            font-size: 18px;
+        }
+        .phone-input input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: #fff;
+            font-size: 15px;
+        }
+        .phone-input input::placeholder {
+            color: #555;
+        }
+        /* =========================
+           SECTION
+        ========================= */
+        .section-label {
+            margin: 19px 0 9px;
+            color: #666;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+        /* =========================
+           6 BOUTONS
+           MÊME CLASSE
+           MÊME FONCTION JS
+        ========================= */
+        .motifs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .motif-btn {
+            min-height: 48px;
+            border-radius: 11px;
+            background: #0d0000;
+            border: 1px solid #410808;
+            color: #ddd;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .7px;
+            cursor: pointer;
+            transition:
+                transform .2s ease,
+                background .2s ease,
+                border-color .2s ease,
+                box-shadow .2s ease;
+        }
+        .motif-btn:hover,
+        .motif-btn.active {
+            background: #9b0000;
+            border-color: #ff1616;
+            color: #fff;
+            box-shadow:
+                0 0 20px rgba(255, 0, 0, .3);
+            transform: translateY(-2px);
+        }
+        .motif-btn:active {
+            transform: scale(.96);
+        }
+        /* =========================
+           SEND
+        ========================= */
+        .envoyer-btn {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 58px;
+            margin-top: 18px;
+            border: 0;
+            border-radius: 13px;
+            background:
+                linear-gradient(
+                    100deg,
+                    #620000,
+                    #d00000,
+                    #720000
+                );
+            background-size: 200% 100%;
+            color: #fff;
+            font-weight: 900;
+            font-size: 13px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow:
+                0 0 25px rgba(255, 0, 0, .2);
+            animation: gradient 4s linear infinite;
+        }
+        @keyframes gradient {
+            to {
+                background-position: 200% 0;
+            }
+        }
+        .envoyer-btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, .18),
+                    transparent
+                );
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            60%,
+            100% {
+                left: 130%;
+            }
+        }
+        .envoyer-btn:active {
+            transform: scale(.97);
+        }
+        /* =========================
+           SECURITY INFO
+        ========================= */
+        .security {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 14px;
+        }
+        .info {
+            padding: 12px;
+            border: 1px solid #191919;
+            border-radius: 10px;
+            background: #070707;
+        }
+        .info span {
+            display: block;
+            color: #555;
+            font-size: 8px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .info strong {
+            font-size: 10px;
+            color: #bbb;
+        }
+        /* =========================
+           DISCLAIMER
+        ========================= */
+        .disclaimer {
+            width: min(90%, 500px);
+            margin: 18px auto 35px;
+            padding: 14px;
+            border-left: 2px solid #b00000;
+            background: rgba(25, 0, 0, .3);
+            color: #666;
+            text-align: center;
+            font-size: 9px;
+            line-height: 1.7;
+        }
+        /* =========================
+           SIDE MENU
+        ========================= */
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .75);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1998;
+            transition: .3s;
+        }
+        .side-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: min(82%, 340px);
+            height: 100vh;
+            padding: 25px 20px;
+            background:
+                linear-gradient(
+                    180deg,
+                    #100000,
+                    #050505 70%,
+                    #080000
+                );
+            border-right: 1px solid #450000;
+            transform: translateX(-105%);
+            transition: .35s;
+            z-index: 1999;
+            box-shadow:
+                15px 0 50px rgba(0, 0, 0, .8);
+        }
+        .menu-header {
+            padding: 15px 0 22px;
+            border-bottom: 1px solid #300000;
+        }
+        .menu-header h3 {
+            color: #ff1515;
+            letter-spacing: 2px;
+            text-shadow:
+                0 0 15px rgba(255, 0, 0, .5);
+        }
+        .menu-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 22px;
+        }
+        .menu-btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: 11px;
+            border: 1px solid #350000;
+            background: #090909;
+            color: #eee;
+            text-align: left;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .menu-btn:hover {
+            border-color: #ff0000;
+            color: #ff3030;
+        }
+        .menu-footer {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 22px;
+        }
+        .uid-section {
+            padding: 14px;
+            border: 1px solid #300000;
+            border-radius: 12px;
+            background: #080808;
+        }
+        .uid-label {
+            color: #666;
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
+        .uid-value {
+            margin: 8px 0 12px;
+            color: #ff2525;
+            word-break: break-all;
+            font-size: 11px;
+        }
+        .copy-uid-btn {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #650000;
+            border-radius: 9px;
+            background: #180000;
+            color: white;
+            cursor: pointer;
+        }
+        .close-menu-btn {
+            padding: 13px;
+            text-align: center;
+            color: #ff3030;
+            cursor: pointer;
+        }
+        body.menu-open .side-menu {
+            transform: translateX(0);
+        }
+        body.menu-open .menu-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* =========================
+           MOBILE
+        ========================= */
+        @media (max-width: 480px) {
+            .motifs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .report-box {
+                padding: 18px;
+            }
+            .subtitle {
+                font-size: 9px;
+                letter-spacing: 3px;
+            }
+        }
+        @media (max-width: 350px) {
+            .motifs {
+                grid-template-columns: 1fr;
+            }
+            .motif-btn {
+                min-height: 45px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div id="loadingOverlay" class="loading-overlay">
-    <div class="loading-spinner"></div>
-</div>
-
-<div id="menuOverlay" class="menu-overlay"></div>
-
-<div id="sideMenu" class="side-menu">
-    <div class="menu-header">
-        <h3>SUPREME ARSENE</h3>
+    <!-- =========================
+         BACKGROUND VIDEO
+    ========================= -->
+    <div class="video-wrapper">
+        <video autoplay loop muted playsinline preload="auto">
+            <source
+                src="https://files.catbox.moe/w3ygir.mp4"
+                type="video/mp4"
+            >
+        </video>
+        <div class="overlay"></div>
     </div>
-    <div class="menu-buttons">
-        <button class="menu-btn whatsapp" id="menuWhatsappBtn">CHAINE WHATSAPP</button>
-        <button class="menu-btn telegram" id="menuTelegramBtn">CHAINE TELEGRAM</button>
-        <button class="menu-btn owner" id="menuOwnerBtn">CREATOR</button>
-    </div>
-    <div class="menu-footer">
-        <div class="uid-section">
-            <div class="uid-label">🌐YOUR UID</div>
-            <div class="uid-value" id="userUid">Chargement...</div>
-            <button class="copy-uid-btn" id="copyUidBtn">📋 COPIER L'UID</button>
+    <!-- =========================
+         MENU OVERLAY
+    ========================= -->
+    <div id="menuOverlay" class="menu-overlay"></div>
+    <!-- =========================
+         SIDE MENU
+    ========================= -->
+    <div id="sideMenu" class="side-menu">
+        <div class="menu-header">
+            <h3>SUPREME ARSENE</h3>
         </div>
-        <div class="close-menu-btn" id="closeMenuBtn">✖ FERMER</div>
+        <div class="menu-buttons">
+            <button
+                type="button"
+                class="menu-btn whatsapp"
+                id="menuWhatsappBtn">
+                🟢 CHAINE WHATSAPP
+            </button>
+            <button
+                type="button"
+                class="menu-btn telegram"
+                id="menuTelegramBtn">
+                🔵 CHAINE TELEGRAM
+            </button>
+            <button
+                type="button"
+                class="menu-btn owner"
+                id="menuOwnerBtn">
+                👑 CREATOR
+            </button>
+        </div>
+        <div class="menu-footer">
+            <div class="uid-section">
+                <div class="uid-label">
+                    🌐 YOUR UID
+                </div>
+                <div
+                    class="uid-value"
+                    id="userUid">
+                    Chargement...
+                </div>
+                <button
+                    type="button"
+                    class="copy-uid-btn"
+                    id="copyUidBtn">
+                    📋 COPIER L'UID
+                </button>
+            </div>
+            <div
+                class="close-menu-btn"
+                id="closeMenuBtn">
+                ✖ FERMER
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="menu-float" id="menuIcon">☰</div>
-
-<div class="video-wrapper">
-    <video autoplay loop muted playsinline>
-        <source src="https://files.catbox.moe/w3ygir.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-</div>
-
-<h1 class="glitch" data-text="SUPREME ARSENE BAN">SUPREME ARSENE BAN</h1>
-<p class="subtitle">SUBMIT REPORT<br>INCIDENT DETAILS</p>
-
-<div class="report-box">
-    <div class="phone-input" id="phoneWrapper">
-        <span>☎️</span>
-        <input type="tel" id="phone" placeholder="Enter phone number">
+    <!-- =========================
+         MENU BUTTON
+    ========================= -->
+    <button
+        type="button"
+        class="menu-float"
+        id="menuIcon">
+        ☰
+    </button>
+    <!-- =========================
+         TOP STATUS
+    ========================= -->
+    <div class="top-bar">
+        <div class="system-status">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
+        </div>
+        <div class="system-status">
+            SUPREME // 01
+        </div>
     </div>
-    
-    <!-- ANCIENS BOUTONS -->
-    <div class="motifs">
-        <button data-type="SCAM" class="motif-btn">SCAM 🚨</button>
-        <button data-type="ABUSE" class="motif-btn">ABUSE ⚠️</button>
-        <button data-type="SPAM" class="motif-btn">SPAM ❌️</button>
+    <!-- =========================
+         HEADER
+    ========================= -->
+    <header class="brand">
+        <div class="brand-small">
+            SUPREME NETWORK
+        </div>
+        <h1 class="glitch">
+            SUPREME ARSENE
+        </h1>
+        <p class="subtitle">
+            REPORT CENTER<br>
+            INCIDENT MANAGEMENT
+        </p>
+    </header>
+    <!-- =========================
+         MAIN REPORT
+    ========================= -->
+    <div class="report-box">
+        <div class="card-head">
+            <div class="card-title">
+                NEW REPORT
+            </div>
+            <div class="card-id">
+                SECURE ACCESS
+            </div>
+        </div>
+        <!-- PHONE -->
+        <div class="input-label">
+            TARGET NUMBER
+        </div>
+        <div
+            class="phone-input"
+            id="phoneWrapper">
+            <span>☎️</span>
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter phone number"
+                autocomplete="tel"
+                inputmode="tel"
+            >
+        </div>
+        <!-- =========================
+             ONE SINGLE BUTTON GROUP
+             ========================= -->
+        <div class="section-label">
+            INCIDENT CATEGORY
+        </div>
+        <div class="motifs">
+            <button
+                type="button"
+                data-type="SCAM"
+                class="motif-btn">
+                SCAM 💀
+            </button>
+            <button
+                type="button"
+                data-type="ABUSE"
+                class="motif-btn">
+                ABUSE 💀
+            </button>
+            <button
+                type="button"
+                data-type="SPAM"
+                class="motif-btn">
+                SPAM ☠️
+            </button>
+            <button
+                type="button"
+                data-type="SUPREME"
+                class="motif-btn">
+                SUPREME ☠️
+            </button>
+            <button
+                type="button"
+                data-type="FUCKED"
+                class="motif-btn">
+                FUCKED 🚫
+            </button>
+            <button
+                type="button"
+                data-type="KILLED"
+                class="motif-btn">
+                KILLED 🚫
+            </button>
+        </div>
+        <!-- =========================
+             SUBMIT
+        ========================= -->
+        <button
+            type="button"
+            id="sendBtn"
+            class="envoyer-btn">
+            SEND REPORT ☠️
+        </button>
+        <!-- STATUS -->
+        <div class="security">
+            <div class="info">
+                <span>
+                    CONNECTION
+                </span>
+                <strong>
+                    SECURE
+                </strong>
+            </div>
+            <div class="info">
+                <span>
+                    STATUS
+                </span>
+                <strong>
+                    READY
+                </strong>
+            </div>
+        </div>
     </div>
-
-    <!-- NOUVEAUX 3 BOUTONS ROUGE/NOIR -->
-    <div class="new-buttons">
-        <button data-type="SUPREME" class="new-btn supreme">SUPREME</button>
-        <button data-type="FUCKED" class="new-btn fucked">FUCKED</button>
-        <button data-type="KILLED" class="new-btn killed">KILLED</button>
+    <!-- =========================
+         DISCLAIMER
+    ========================= -->
+    <div class="disclaimer">
+        ⚠️ This interface is intended for
+        educational and demonstration purposes.
+        No automatic action or account restriction
+        is guaranteed. Use responsibly and only
+        with appropriate authorization.
     </div>
-
-    <button id="sendBtn" class="envoyer-btn">ENVOYER 🔰</button>
-</div>
-
-<div class="disclaimer">
-    ⚠️ Disclaimer: This tool is for educational purposes only.<br>
-    We do not guarantee the banning of any account and are not responsible<br>
-    for any consequences that may arise from using this service.<br>
-    Use at your own risk.
-</div>
-
-<script src="script.js"></script>
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+    <script src="script.js"></script>
 </body>
 </html>
