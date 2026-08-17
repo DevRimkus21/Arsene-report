@@ -1,68 +1,137 @@
 @media (max-width: 480px) {
-    .motifs, .action-buttons { 
+    .motifs,
+    .action-buttons {
         grid-template-columns: 1fr;
     }
 
-    h1 { 
-        font-size: 1.8rem; 
+    h1 {
+        font-size: 1.8rem;
     }
 
-    .subtitle { 
-        font-size: 0.9rem; 
-        letter-spacing: 3px; 
+    .subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
     }
 
-    .report-box { 
-        padding: 18px; 
+    .report-box {
+        padding: 18px;
     }
 
-    .disclaimer br { 
-        display: inline; 
+    .disclaimer br {
+        display: inline;
     }
 }
 
-/* Effet glitch léger au hover du titre */
+/* =========================
+   BOUTONS MOTIFS
+========================= */
+
+.motif-btn {
+    min-height: 48px;
+    border-radius: 11px;
+    background: #0d0000;
+    border: 1px solid #410808;
+    color: #ddd;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* Bouton sélectionné + hover */
+.motif-btn:hover,
+.motif-btn.selected {
+    background: #9b0000;
+    border-color: #ff1616;
+    color: #fff;
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 0, .3);
+
+    transform: translateY(-2px);
+}
+
+/* Appui mobile */
+.motif-btn:active {
+    transform: scale(.96);
+}
+
+/* =========================
+   EFFET GLITCH TITRE
+========================= */
+
 h1:hover {
     animation: glitch 0.3s ease;
 }
 
 @keyframes glitch {
     0% {
-        text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+        text-shadow:
+            0 0 20px #ff0000,
+            0 0 40px #ff0000;
     }
 
     25% {
-        text-shadow: -2px 0 #ff0000, 2px 0 #000;
+        text-shadow:
+            -2px 0 #ff0000,
+            2px 0 #000;
     }
 
     50% {
-        text-shadow: 2px 0 #ff0000, -2px 0 #000;
+        text-shadow:
+            2px 0 #ff0000,
+            -2px 0 #000;
     }
 
     75% {
-        text-shadow: -1px 0 #ff0000, 1px 0 #000;
+        text-shadow:
+            -1px 0 #ff0000,
+            1px 0 #000;
     }
 
     100% {
-        text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+        text-shadow:
+            0 0 20px #ff0000,
+            0 0 40px #ff0000;
     }
 }
 
-/* Toast notif */
+/* =========================
+   TOAST NOTIFICATION
+========================= */
+
 .toast {
     position: fixed;
     bottom: 30px;
     left: 50%;
+
     transform: translateX(-50%);
+
     background: rgba(255, 0, 0, 0.95);
     color: #000;
+
     padding: 12px 24px;
     border-radius: 30px;
+
     font-size: 14px;
     font-weight: 800;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-    z-index: 1000;
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 0, 0.7);
+
+    z-index: 9999;
+
     animation: slideUp 0.3s ease;
+
     white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -71,12 +140,16 @@ h1:hover {
 @keyframes slideUp {
     0% {
         opacity: 0;
-        transform: translateX(-50%) translateY(30px);
+        transform:
+            translateX(-50%)
+            translateY(30px);
     }
 
     100% {
         opacity: 1;
-        transform: translateX(-50%) translateY(0);
+        transform:
+            translateX(-50%)
+            translateY(0);
     }
 }
 
@@ -87,7 +160,31 @@ h1:hover {
 @keyframes fadeOut {
     to {
         opacity: 0;
-        transform: translateX(-50%) translateY(20px);
+        transform:
+            translateX(-50%)
+            translateY(20px);
         visibility: hidden;
+    }
+}
+
+/* =========================
+   MOBILE PETITS ÉCRANS
+========================= */
+
+@media (max-width: 350px) {
+    .motifs {
+        grid-template-columns: 1fr;
+    }
+
+    .motif-btn {
+        min-height: 45px;
+    }
+
+    .toast {
+        max-width: 90%;
+        padding: 10px 16px;
+        font-size: 11px;
+        white-space: normal;
+        text-align: center;
     }
 }
