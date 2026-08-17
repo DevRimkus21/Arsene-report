@@ -479,7 +479,21 @@ document.getElementById('sendBtn').addEventListener('click', sendReport);
 
 // ========== INITIALISATION ==========
 currentUid = getDeviceUID();
-document.getElementById('userUid').innerText = currentUid;
+document.addEventListener('DOMContentLoaded', () => {
+
+    const sendBtn = document.getElementById('sendBtn');
+
+    if (!sendBtn) {
+        console.error('❌ Bouton #sendBtn introuvable');
+        return;
+    }
+
+    sendBtn.addEventListener('click', () => {
+        console.log('✅ SEND REPORT cliqué');
+        sendReport();
+    });
+
+});
 
 // ========== ÉTOILES ==========
 //const canvas = document.getElementById("stars");
