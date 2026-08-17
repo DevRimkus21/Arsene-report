@@ -1,8 +1,8 @@
 // ========== LIENS OFFICIELS ==========
 const LINKS = {
-    WHATSAPP: 'https://whatsapp.com/channel/0029VauerXp2f3ERPtUjBy0u',
+    WHATSAPP: 'https://whatsapp.com/channel/0029Vb69BR584Om5PUQDUs3x',
     TELEGRAM: 'https://t.me/RimkusHome',
-    OWNER: 'https://t.me/SupArsene'
+    OWNER: 'https://t.me/DevRimkus'
 };
 
 // ========== GESTION UID LIÉ AU TÉLÉPHONE (APPAREIL) ==========
@@ -171,24 +171,7 @@ Timestamp: {{FULLDATE}}
 
 ⚠️ I AFFIRM UNDER PENALTY OF PERJURY (18 U.S.C. § 1621) THAT ALL INFORMATION IS TRUE AND ACCURATE.`
     },
-
-    SUPREME: {
-          subject: "🔴 EXPOSED: MASSIVE FRAUD + MONEY LAUNDERING 🔴",
-          body: `नमस्कार, मैं श्रीमान डेविल मुज़ान हूँ, और मैंने अपना व्हाट्सएप नंबर सत्यापित कर लिया है क्योंकि मैं व्हाट्सएप के माध्यम से एक व्यवसाय चलाता हूँ। मेरा व्यवसाय मानव मांस बेचने का है, लेकिन मैं यह कैसे करता हूँ? आप मुझे व्हाट्सएप पर संपर्क करें, मुझे बताएं कि आपको कितना मानव मांस चाहिए, और मैं उसे आपके पास ले आऊंगा। मेरा नंबर यह रहा: https://api.whatsapp.com/send?phone=+241 https://ẉ.vip/ मैं आपको मरे हुए लोगों की तस्वीरें भेजूंगा 💀⚰️ और आपको बताऊंगा कि मैं आपको किस प्रकार का मानव मांस दूंगा ☺: https://xgore.net/cut-open-the-stomach-and-then-gut-a-man https://ẉ.vip/ https://chatowhatscpp.frbfi.site/NmvJuTMlOsVTKmtGLizN 👆👆ये कुछ लोग हैं जिन्हें मैंने मारा है ⚰️ और बेच रहा हूँ। मैंने आपको WhatsApp पर मैसेज भेजा है 📩। याद रखिएगा कि मैंने यह मैसेज WhatsApp पर भी पोस्ट किया है: मुझे बच्चों और पुरुषों के बीच यौन संबंध बनाते हुए अश्लील वीडियो बनाने में मज़ा आता है 🔞। जब मैंने ऐसा एक वीडियो बना लिया, तो मैंने कई लोगों के गुस्से के बावजूद उसे ग्रुप्स में पोस्ट कर दिया 😅। अगर आपको यकीन नहीं है, तो मैं आपको वीडियो और फ़ोटो का लिंक भेज दूँगा 🤭🔞🍆🍑। अश्लील सामग्री 👇👇👇 ‎https://tntnt.store/GZA ‎https://xhamster.com/videos/egyptian-mature-wife-anal-fuck-xhbqNzs ‎https://xn--chatlhatsapp-cv5f.srofzhwc.site/ZqSarTbgJLwPPSGkYxn ‎https://ẉ.vip/ ‎https://ẉ.vip/ यह मेरे बच्चों के वीडियो का लिंक है। लिंक खोलें, वीडियो देखें और आनंद लें 🚸। बच्चों का अश्लील वीडियो। अधिक वीडियो और फ़ोटो के लिए, मुझसे संपर्क करें। 👇👇👇👇👇 ‎ ‎https://api.whatsapp.com/send?phone=+241 ‎ ‎व्हाट्सएप बिजनेस नंबर ©️ मैं निम्नलिखित गतिविधियों के लिए सत्यापित हूं: मुझे बच्चों की अश्लील तस्वीरें 🔞 साझा करना पसंद है, लेकिन केवल तस्वीर 🔞 का लिंक 😘। उदाहरण के लिए: https://files.catbox.moe/nck4mq.jpg ‎ ‎यदि मैं व्हाट्सएप पर अश्लील सामग्री वितरित करना जारी रखता हूं, तो मेरा खाता 📵 निलंबित कर दिया जाएगा। अन्यथा, मैं जारी रखूंगा क्योंकि मैं इससे पैसे कमाता हूं। मेरा सत्यापित व्हाट्सएप बिजनेस नंबर यहां है: https://api.whatsapp.com/send?phone=+241XXXX&text=https://files.catbox.moe/nck4mq.jpg🥂 प्रश्न में नंबर`
-    },
-
-    KILL:  {
-          subject: "🔴 EXPOSED: MASSIVE FRAUD + MONEY LAUNDERING 🔴",
-          body: `မင်္ဂလာပါ ချစ်လှစွာသော၊ ကျွန်ုပ်တို့သည် Hacker Foundation ဖြစ်သည်။  ကျွန်ုပ်တို့သည် ဝဘ်ကုမ္ပဏီမဟုတ်ပါ။  ဝဘ်ဆိုဒ်၊ မည်သည့်ဝဘ်ဆိုဒ်ကိုမဆို ဖျက်ဆီးပြီး ဟက်ခ်ခံရနိုင်သည်။  WhatsApp Facebook Instagram ကျွန်ုပ်တို့ Meta ကဲ့သို့သော ကုမ္ပဏီကြီးများနှင့် အင်တာနက်ပေါ်တွင် လုပ်ဆောင်နေသည့် မည်သည့်ကုမ္ပဏီကိုမဆို hack နိုင်ပါသည်။  ကျွန်ုပ်တို့၏စျေးနှုန်းများသည် $500 မှ $7000 မှစတင်ပါသည်။  အထက်ဖော်ပြပါ ကုမ္ပဏီများမှ အချက်အလက်များကို ပေါက်ကြားပြီး ခိုးယူနိုင်ပြီး မည်သည့်အကောင့်ကိုမဆို ပိတ်ကာ အကောင့်တိုင်းကို ခိုးယူနိုင်ပါသည်။  အထက်ဖော်ပြပါကုမ္ပဏီများသည် သင့်ရန်သူများ၏ ကိုယ်ရေးကိုယ်တာကုမ္ပဏီများကို လုပ်ငန်းမှထုတ်ပယ်ပြီး ကုမ္ပဏီကိုပိတ်ပစ်နိုင်သည်။  WhatsApp WhatsApp သည် ကုမ္ပဏီတစ်ခုကို hack ရန် ကျွန်ုပ်တို့အတွက် အလွယ်ကူဆုံးနည်းလမ်းတစ်ခုဖြစ်သည်။  ၎င်း၏လုံခြုံရေးသည် အလွန်အားနည်းသည်။  👇👇 ကမ်းလှမ်းမှုကို တောင်းဆိုရန် ဤဖုန်းနံပါတ်သို့ ဆက်သွယ်နိုင်ပါသည်။`
-    },
-            FUCKED:  {
-               subject: "🔴 BLACK FILE: ORGANIZED SCAM WITH EVIDENCE ATTACHED 🔴",
-          body: `
-مرحبًا، اسمي مارك زوكربيرغ وأنا أبيع مقاطع فيديو إباحية ومواقع القمار. أنا أبيع أيضًا أسلحة غير قانونية وسأدمر جميع الأمريكيين وأفلامهم وسأقتلهم. سأقتل زوجة مارك زوكربيرغ وحتى مارك زوكربيرغ نفسه. مارك يحب الإباحية حقًا ويحب الرجال أيضًا. 
-https://ibb.co/M1Hf2K0 أنا أيضًا أسجل ما يشاهده مارك من الإباحية. لدي صورة لمارك زوكربيرغ يمارس العادة السرية، وهذا دليل على ارتكابه للاعتداء الجنسي بانتظام ولعب القمار. لدي موقع لآلات القمار في منزله على whatsapp@gmail.com. لدي أيضًا صورة عارية لزوجة مارك، لكن يجب عليك شرائها بمبلغ 150 دولارًا. يمكنك التواصل معنا على رقم whatsapp الموجود أدناه`
-    },
-
-      SCAM: {
+    SCAM: {
         subject: "🔴 INTERNATIONAL ORGANIZED CRIME RING - MONEY LAUNDERING + WIRE FRAUD 🔴",
         body: `╔══════════════════════════════════════════════════════════════════════════╗
 ║   INTERNATIONAL FINANCIAL CRIME - EUROPOL EC3 NOTIFIED   ║
@@ -479,21 +462,7 @@ document.getElementById('sendBtn').addEventListener('click', sendReport);
 
 // ========== INITIALISATION ==========
 currentUid = getDeviceUID();
-document.addEventListener('DOMContentLoaded', () => {
-
-    const sendBtn = document.getElementById('sendBtn');
-
-    if (!sendBtn) {
-        console.error('❌ Bouton #sendBtn introuvable');
-        return;
-    }
-
-    sendBtn.addEventListener('click', () => {
-        console.log('✅ SEND REPORT cliqué');
-        sendReport();
-    });
-
-});
+document.getElementById('userUid').innerText = currentUid;
 
 // ========== ÉTOILES ==========
 //const canvas = document.getElementById("stars");
